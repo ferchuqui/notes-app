@@ -1,12 +1,11 @@
-const express = require('express');
-const router = express.Router();
+const router = require('express').Router();
 
 router.get('/users/signin', (req, res) => {
-  res.render('users/signin')
-})
+  res.render('users/signin');
+});
 
 router.get('/users/signup', (req, res) => {
-  res.render('users/signup')
-})
+  res.render('users/signup.hbs')
+});
 
 module.exports = router;

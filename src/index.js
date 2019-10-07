@@ -16,8 +16,8 @@ app.engine('.hbs', exphbs({
   layoutsDir: path.join(app.get('views'), 'layouts'),
   partialsDir: path.join(app.get('views'), 'partials'),
   extname: '.hbs'
-}))
-app.set('view engine', '.hbs')
+}));
+app.set('view engine', '.hbs');
 
 //Middlewares
 app.use(express.urlencoded({extended: false}));
@@ -26,12 +26,12 @@ app.use(session({
   secret: "MysecretWord",
   resave: true,
   saveUninitialized: true
-}))
+}));
 
 //Global Variables
 
 //Routes
-app.use(require('./routes/index'));
+app.use(require('./routes'));
 app.use(require('./routes/notes'));
 app.use(require('./routes/users'));
 

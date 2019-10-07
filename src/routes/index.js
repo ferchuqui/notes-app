@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/', (req, res) =>{
-  res.render('/views/index.hbs')
+router.get('/', (req, res) => {
+  res.render('index')
 })
-router.get('/about', (req, res) =>{
-  res.render('/views/about.hbs')
+router.get('/about', (req, res) => { 
+  res.render('about')
 })
 
 module.exports = router;
