@@ -1,5 +1,4 @@
 const express = require('express');
-
 const path = require('path');
 const exphbs = require('express-handlebars');
 const methodOverride = require('method-override');
@@ -18,7 +17,7 @@ app.engine('.hbs', exphbs({
   partialsDir: path.join(app.get('views'), 'partials'),
   extname: '.hbs'
 }))
-app.set('view engine'), '.hbs';
+app.set('view engine', '.hbs')
 
 //Middlewares
 app.use(express.urlencoded({extended: false}));
