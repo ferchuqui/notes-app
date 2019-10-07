@@ -5,7 +5,7 @@ router.get('/users/signin', (req, res) => {
 });
 
 router.get('/users/signup', (req, res) => {
-  res.render('users/signup.hbs')
+  res.render('users/signup');
 });
 
 module.exports = router;
