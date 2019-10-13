@@ -25,11 +25,12 @@ router.post('/users/signup', async(req, res) =>{
   if (errors.lengt>0) {
     res.render('/users/signup', {errors, name, email, password, confirm_password})
   } else {
-    const newUser =new User({name, email, password}) 
-    newUser.password = await newUser.encryptPassword(password)
+    const newUser = new User({name, email, password});
+    newUser.password = await newUser.encryptPassword(password);
     await newUser.save();
     req.flash('success_msg', 'You are registered')
     res.redirect('/users/signin')
   }
+
 });
 module.exports = router;
