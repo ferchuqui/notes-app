@@ -1,1 +1,26 @@
-<h1>Ingresar</h1>
+<div class="row">
+  <div class="col-md-4 mx-auto">
+    <div class="card mt-4 text-center">
+      <div class="card-header">
+        <h1>Account Login</h1>
+      </div>
+      <img src="/images/6700.jpg" class="mx-auto logo d-block m-4" alt="Logo 6700">
+      <div class="card-body">
+        <form action="/users/signin" method="POST">
+        
+        <div class="form-group">
+          <input type="email" class="form-control" id="email" placeholder="email" autofocus>
+        </div>
+        <div class="form-group">
+          <input type="password" name="password" class="form-control" placeholder="password">
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary btn-block" >
+            SignIn
+          </button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
