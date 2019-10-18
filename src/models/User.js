@@ -9,7 +9,7 @@ const UserSchema = new Schema({
   confirm_password: {type: String, required: true}
 
 })
-UserSchema.methods.encryptpassword = async(password) =>{
+UserSchema.methods.encryptPassword = async(password) =>{
   const salt =await bcrypt.genSalt(10)
   const hash = await bcrypt.hash(password, salt)
   return hash
