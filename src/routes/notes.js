@@ -24,6 +24,7 @@ if (errors.length >0) {
   });
 } else {
   const newNote = new Note({ title, description});
+  newNote.user = req.user.id;
   await newNote.save();
   req.flash('success_msg', 'Note Added Successfully')
   res.redirect('/notes')
@@ -31,7 +32,7 @@ if (errors.length >0) {
 });
 
 router.get('/notes',isAuthenticated, async (req, res) => {
-  const notes = await Note.find().sort({date: 'desc'});
+  const notes = await Note.find({user: req.user.id}).sort({date: 'desc'});
   res.render('notes/all-notes', {notes});
 })
 router.get('/notes/edit/:id',isAuthenticated, async (req, res) =>{
