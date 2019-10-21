@@ -6,10 +6,10 @@ const UserSchema = new Schema({
   name: {type: String, required: true},
   email: {type: String, required: true},
   password: {type: String, required: true},
-  confirm_password: {type: String, required: true}
+  confirm_password: {type: String, required: true},
 
 })
-UserSchema.methods.encryptpassword = async(password) =>{
+UserSchema.methods.encryptPassword = async(password) =>{
   const salt =await bcrypt.genSalt(10)
   const hash = await bcrypt.hash(password, salt)
   return hash
